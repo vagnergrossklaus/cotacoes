@@ -13,7 +13,7 @@ cotacoesForm.addEventListener('submit', (event) => {
     event.preventDefault()
     const ativo = document.querySelector('input').value
 
-    fetch(`http://localhost:3000/cotacoes?ativo=${ativo}`).then((response) => {
+    fetch(`/cotacoes?ativo=${ativo}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 mainMessage.innerText = `${data.error.code} - ${data.error.message}`
